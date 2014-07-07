@@ -4,6 +4,6 @@ block content
 	h1= title
 	form#fileUpload(method="post" action="/uploads/submit" enctype="multipart/form-data")
 		label(for="payload") Select a file to upload:
-		input#payload(type="file" name="myFile" accept="image/*")
+		input#payload(type="file" name="myFile" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
 		br
 		button#upload Upload
