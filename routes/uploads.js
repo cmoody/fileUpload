@@ -1,8 +1,16 @@
-var express = require('express'); 
-var router = express.Router(); 
-var util = require("util"); 
-var fs = require("fs"); 
- 
+var express = require('express');
+var router = express.Router();
+var util = require("util");
+var fs = require("fs");
+var multer = require('multer');
+
+router.use(multer({
+    dest: './uploads/',
+    rename: function (fieldname, filename) {
+        return filename.replace(/\W+/g, '-').toLowerCase() + Date.now()
+    }
+}));
+
 router.get('/', function(req, res) { 
 	res.render('fileupload', {title: "I love files!"}); 
 }); 
@@ -13,7 +21,7 @@ router.route('/upload')
 		res.send('This is not the page youre looking for.');
 	})
 
-	.post(function(req, res, next){ 
+	.post(function(req, res, next){
 		if (req.files) { 
 			console.log(util.inspect(req.files));
 

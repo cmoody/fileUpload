@@ -4,7 +4,6 @@ var favicon = require('static-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var multer = require('multer');
 var debug = require('debug')('fileUpload');
 
 // Routes
@@ -25,12 +24,6 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
-app.use(multer({
-    dest: './uploads/',
-    rename: function (fieldname, filename) {
-        return filename.replace(/\W+/g, '-').toLowerCase() + Date.now()
-    }
-}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
