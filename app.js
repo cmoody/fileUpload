@@ -55,6 +55,7 @@ if (app.get('env') === 'development') {
 
 // production error handler
 // no stacktraces leaked to user
+// Can move this error handling to router to send back json for API
 app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {

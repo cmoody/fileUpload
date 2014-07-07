@@ -21,7 +21,7 @@ router.get('/', function(req, res) {
 	res.render('fileupload', {title: "I love files!"}); 
 }); 
  
-router.route('/upload')
+router.route('/submit')
 	// Default for trying to browse page
 	.get(function(req, res, next) {
 		res.send('This is not the page youre looking for.');
