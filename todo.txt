@@ -1,0 +1,7 @@
+TODO
+====
+- Check file type and convert if needed
+- Write first processing method and way to choose which one
+- Write parse method to get data for comparison
+- Compare data to that of parse
+- Write parse method to insert all new or updated data

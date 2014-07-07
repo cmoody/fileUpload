@@ -48,9 +48,3 @@ router.route('/upload')
 	});
 
 module.exports = router;
-
-// check if csv or excel
-// convert to csv if excel
-// choose processing method
-// return json
-// send to parse
