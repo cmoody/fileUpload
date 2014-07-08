@@ -7,21 +7,41 @@ var XLSX = require('xlsx');
 
 var methodList = {
 	cavalierdist: function(file) {
-		var workbook = XLSX.readFile(file);
-		console.log(workbook);
+		var jsonFile = XLSX.readFile(file);
+
+		// process file here
+
+		getJSONDB(jsonFile);
+	},
+
+	chasesawesomedist: function(file) {
+		var jsonFile = XLSX.readFile(file);
+
+		// process different file format
+
+		getJSONDB(jsonFile);
 	}
 };
 
-function compareWorkbookDb() {
-	// db.getAllProducts() // promise?
-	// compare to workbook
+function getJSONDB(jsonFile) {
+	// db.getAllProducts()
+	// 	.then(function(jsonDB) {
+	// 		compareFileDB(jsonFile, jsonDB);
+	// 	})
+	// 	.fail(function(err) {
+	// 		console.log(err);
+	// 	});
+};
+
+function compareFileDB(jsonFile, jsonDB) {
+	// run through both sets of json data
 };
 
 var processor = {
 	chooseMethod: function(file, id) {
 		// id is string
 		var method = methodList[id];
-		method(file);
+		method(file); // chooses method for processing
 	}
 };
 
