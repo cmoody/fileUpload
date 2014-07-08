@@ -3,11 +3,25 @@
 
 var fs = require('fs');
 var XLSX = require('xlsx');
+// var db = require('db');
 
-var processor = {
-	jackieos: function(file) {
+var methodList = {
+	cavalierdist: function(file) {
 		var workbook = XLSX.readFile(file);
 		console.log(workbook);
+	}
+};
+
+function compareWorkbookDb() {
+	// db.getAllProducts() // promise?
+	// compare to workbook
+};
+
+var processor = {
+	chooseMethod: function(file, id) {
+		// id is string
+		var method = methodList[id];
+		method(file);
 	}
 };
 

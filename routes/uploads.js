@@ -23,7 +23,7 @@ router.get('/', function(req, res) {
 	res.render('fileupload', {title: "I love files!"}); 
 }); 
  
-router.route('/submit')
+router.route('/submit/:id')
 	// Default for trying to browse page
 	.get(function(req, res, next) {
 		res.send('This is not the page youre looking for.');
@@ -39,8 +39,7 @@ router.route('/submit')
 
 			fs.exists(req.files.myFile.path, function(exists) {
 				if(exists) {
-					// method depends on id passed?
-					processor.jackieos(req.files.myFile.path);
+					processor.chooseMethod(req.files.myFile.path, req.params.id);
 
 					res.end("Got your file!"); 
 				} else { 
