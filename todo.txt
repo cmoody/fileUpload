@@ -5,3 +5,7 @@ TODO
 - Write parse method to get data for comparison
 - Compare data to that of parse
 - Write parse method to insert all new or updated data
+
+
+Put SPA for dashboard in public folder
+Use /API/<id> for API routes

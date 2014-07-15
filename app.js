@@ -7,8 +7,7 @@ var bodyParser = require('body-parser');
 var debug = require('debug')('fileUpload');
 
 // Routes
-var routes = require('./routes/index');
-var users = require('./routes/users');
+//var routes = require('./routes/index');
 var api = require('./routes/api');
 var uploads = require('./routes/uploads');
 
@@ -27,8 +26,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
-app.use('/', routes);
-app.use('/users', users);
+//app.use('/', routes);
+//app.use('/users', users);
 app.use('/api', api);
 app.use('/uploads', uploads);
 

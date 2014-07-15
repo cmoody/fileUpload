@@ -41,7 +41,12 @@ var processor = {
 	chooseMethod: function(file, id) {
 		// id is string
 		var method = methodList[id];
-		method(file); // chooses method for processing
+
+		if(method) {
+			method(file); // chooses method for processing
+		}else{
+			// throw error
+		}
 	}
 };
 

@@ -1,0 +1,50 @@
+<div class="row row-offcanvas row-offcanvas-left">
+
+  <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+    <div class="well sidebar-nav">
+      <ul>
+        <li><a href="" ng-click="addEvent()"><span class="glyphicon glyphicon-plus-sign"></span> Add Event</a></li>
+      </ul>
+      <h2>Event List</h2>
+      <ul class="nav">
+        <li ng-repeat="event in events"><a href="/#/event/{{ event.objectId }}">{{ event.name }}</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="col-xs-12 col-sm-9">
+
+    <div class="row">
+        <div class="col-12 col-sm-12 col-lg-12">
+          <gm-map gm-map-id="'simpleMap'" gm-center="center" gm-zoom="zoom" gm-map-options="options.map" class="map" ng-show="!isAddEvent">
+            <gm-markers gm-objects="map"
+                gm-get-lat-lng="{ lat: object.location.lat, lng: object.location.lng }">
+            </gm-markers>
+          </gm-map>
+
+          <form class="form-horizontal" id="AddEvent" role="form" ng-submit="submitEvent(event)" ng-show="isAddEvent">
+            <div class="input-group">
+              <label for="name">Event Name</label>
+              <input type="text" name="name" class="form-control" placeholder="Name" ng-model="event.name">
+            </div>
+            <div class="input-group">
+              <label for="center">Center</label>
+              <input type="text" name="latitude" class="form-control" placeholder="Latitude" ng-model="event.latitude"> - <input type="text" name="longitude" class="form-control" placeholder="Longitude" ng-model="event.longitude">
+            </div>
+            <div class="input-group">
+              <label for="start_date">Start Date</label>
+              <input type="text" name="start_date" class="form-control" placeholder="Start Date YYYY-MM-DD" ng-model="event.start_date">
+            </div>
+            <div class="input-group">
+              <label for="end_date">End Date</label>
+              <input type="text" name="end_date" class="form-control" placeholder="End Date YYYY-MM-DD" ng-model="event.end_date">
+            </div>
+            <button type="submit" class="btn btn-default">Add Event</button>
+            <button class="btn btn-default" ng-click="cancelAdd()">Cancel</button>
+          </form>
+        </div>
+    </div>
+
+  </div>
+
+</div>
