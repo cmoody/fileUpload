@@ -3,6 +3,7 @@
 // Declare app level module which depends on filters, and services
 angular.module('app', [
   'ngRoute',
+  'api.parse',
   'app.HomeCtrl',
   'app.UserCtrl',
   'app.OrganizationCtrl',
