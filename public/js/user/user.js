@@ -3,6 +3,6 @@
 /* Controllers */
 
 angular.module('app.UserCtrl', [])
-  .controller('MyCtrl1', ['$scope', function($scope) {
-  	$scope.test = 'User Test';
+  .controller('UserCtrl', ['$scope', function($scope) {
+  	$scope.user = 'Chase Moody';
   }]);
